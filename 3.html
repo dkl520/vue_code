@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+             el:"#app",
+             data: {
+                 dem0:1
+             },
+             methods:{
+               async  a(){
+                     this.dem0="a"
+                      this.d();
+                      setTimeout(()=>{
+                          console.log("hello")
+                      })
+                    console.log(this.dem0);
+                 },
+                 b(){
+                    this.dem0="b"
+                     console.log(this.dem0);
+
+                 },
+                 c(){
+                     this.dem0="c";
+                     console.log(this.dem0);
+                 },
+                 d(){
+                    this.dem0="d";
+                     console.log(this.dem0)
+                }
+             },
+            async created(){
+                    await this.a();
+                   this.b();
+                    await this.c(); 
+             }
+        })
+
+    </script>
+
+</body>
+</html>
